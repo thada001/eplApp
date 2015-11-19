@@ -1,0 +1,74 @@
+<div class="teamHead">
+  <div class="tablelink">
+    <a ui-sref='table'>Back to Table</a>
+  </div>
+  <img class='crestL' src='{{teamData.crestUrl}}' alt='{{teamData.name}} crest' />
+  <img class='crestR' src='{{teamData.crestUrl}}' alt="{{teamData.name}} Crest" />
+  <div class="teamname">
+    <h1>{{teamData.name}}</h1>
+  </div>
+</div>
+
+<div class="snf">
+  <div class="squad">
+    <h2>Squad</h2>
+    <div class='container-fluid' id='playerDiv'>
+      <div class='row'>
+        <div class='col-md-4'>Jersey Number</div>
+        <div class='col-md-4'>Name</div>
+        <div class='col-md-4'>Position</div>
+      </div>
+      <div class='row' ng-repeat='player in players'>
+        <div class='col-md-4'>{{player.jerseyNumber}}</div>
+        <div class='col-md-4'><a ui-sref='player({jerseyNumber: player.jerseyNumber})'>{{player.name}}</a></div>
+        <div class='col-md-4'>{{player.pos}}</div>
+      </div>
+    </div>
+    <h3 style='display: block'>Current Squad Worth: {{teamData.squadMarketValue}}</h3>
+  </div>
+  <div class="fixtures">
+    <h2>Fixtures</h2>
+    <div id='flist'>
+      <div ng-repeat='fixture in fixtures'>
+        <p>{{fixture.date | date:'medium'}}</p>
+        <p><span style='color:rgb(0, 100, 185)'>{{fixture.homeTeamName}}</span> {{fixture.result.goalsHomeTeam}} <br> <span style='color:rgb(0, 100, 185)'>{{fixture.awayTeamName}}</span> {{fixture.result.goalsAwayTeam}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class='col-md-6'>
+      <h2>Squad</h2>
+      <div class='container-fluid' id='playerDiv'>
+        <div class='row'>
+          <div class='col-md-4'>Jersey Number</div>
+          <div class='col-md-4'>Name</div>
+          <div class='col-md-4'>Position</div>
+        </div>
+        <div class='row' ng-repeat='player in players'>
+          <div class='col-md-4'>{{player.jerseyNumber}}</div>
+          <div class='col-md-4'><a ui-sref='player({jerseyNumber: player.jerseyNumber})'>{{player.name}}</a></div>
+          <div class='col-md-4'>{{player.position}}</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <h2>Fixtures</h2>
+      <div ng-repeat='fixture in fixtures'>
+        <p>{{fixture.date | date:'medium'}}</p>
+        <p><span style='color:rgb(0, 100, 185)'>{{fixture.homeTeamName}}</span> {{fixture.result.goalsHomeTeam}} <br> <span style='color:rgb(0, 100, 185)'>{{fixture.awayTeamName}}</span> {{fixture.result.goalsAwayTeam}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+-->
