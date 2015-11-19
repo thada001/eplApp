@@ -10,6 +10,7 @@ angular.module('eplApp').factory('teamService', function($http, $q, fdata) {
   }
   service.getTeam = function(id) {
     setTeam(id);
+    console.log(team);
     return $http({
       headers: {'X-Auth-Token': 'd69db8b392004af18d5b09fce1dba987'},
       method: 'GET',

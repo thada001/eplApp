@@ -1,7 +1,7 @@
 angular.module('eplApp').factory('playerService', function($http, $q, fdata, teamService) {
-  var team = teamService.getSelectedTeam();
   var service = {};
   service.getPlayer = function(playerNum) {
+    var team = teamService.getSelectedTeam();
     var dfd = $q.defer();
     $http({
       headers: {'X-Auth-Token': 'd69db8b392004af18d5b09fce1dba987'},
